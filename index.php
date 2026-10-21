@@ -4,6 +4,13 @@ require __DIR__ . '/includes/catalog.php';
 $page = 'home';
 $title = 'ATEA Parfums — Discover Your Scent';
 $withCatalog = true;
+// ===== DATA ANGGOTA KELOMPOK =====
+$team = [
+    ['name' => 'Arya Ramadhan', 'school' => 'SMA Negeri 1 Contoh', 'photo' => 'assets/team/anggota1.png'],
+    ['name' => 'Evan Havillah Dwika Putra', 'school' => 'SMK Negeri 2 Contoh',  'photo' => 'assets/team/anggota2.jpeg'],
+    ['name' => 'Andika Syafulloh Yusuf', 'school' => 'SMA Negeri 3 Contoh',  'photo' => 'assets/team/anggota3.jpeg'],
+    ['name' => 'Tegar Maulida Dias', 'school' => 'SMA Swasta 4 Contoh',  'photo' => 'assets/team/anggota4.jpeg'],
+];
 require __DIR__ . '/includes/header.php';
 ?>
 <main>
