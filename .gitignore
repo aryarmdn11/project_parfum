@@ -1,0 +1,28 @@
+# Pengaturan lokal & rahasia (password DB, rekening, nomor WA)
+config.local.php
+.env
+.env.*
+
+# Backup / dump database yang berisi data asli
+database/backup*
+database/*.bak
+database/*dump*.sql
+*.sqlite
+
+# Upload & log
+uploads/
+*.log
+error_log
+
+# Arsip hasil download
+*.zip
+*.rar
+*.7z
+
+# Editor & sistem operasi
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
