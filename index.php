@@ -27,7 +27,7 @@ require __DIR__ . '/includes/header.php';
 
     <section class="section-wrap">
       <div class="section-heading">
-        <div><p class="eyebrow">FEATURED</p><h2>Signature <em>Scents</em></h2></div>
+        <div><p class="eyebrow">PHOTO AND PROFILES</p><h2>Of the <em>Founders</em></h2></div>
         <a href="<?= h(url('lineup.php')) ?>" class="text-link">VIEW FULL LINEUP <span>↗</span></a>
       </div>
       <div class="product-grid" id="featuredGrid"></div>
