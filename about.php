@@ -1,30 +1,123 @@
+```php
 <?php
 require __DIR__ . '/includes/bootstrap.php';
 require __DIR__ . '/includes/catalog.php';
+
 $page = 'about';
-$title = 'About Us — ATEA Parfums';
+$title = 'About Us – ATEA Parfums';
+
 require __DIR__ . '/includes/header.php';
 ?>
-<main>
-    <section class="about-split">
-      <div class="about-copy">
-        <h1>ABOUT US</h1>
-        <p>ATEA Parfums percaya bahwa aroma punya cara tersendiri untuk bercerita. Setiap parfum kami dibuat sebagai ruang untuk menemukan karakter, suasana, dan kesan yang ingin kamu tinggalkan.</p>
-        <p>Dari momen sehari-hari hingga malam yang spesial, ATEA hadir sebagai detail kecil yang membuat kamu terasa utuh, dan mudah diingat.</p>
-        <a class="outline-link" href="<?= h(url('lineup.php')) ?>">EXPLORE THE LINEUP <span>↗</span></a>
-      </div>
-      <div class="about-visual"><img src="<?= h(url('assets/orlune-box-set.png')) ?>" alt="ATEA Parfums Orlune, botol dan rigid box"></div>
+
+<main class="page-about">
+
+    <!-- HERO -->
+    <section class="about-hero">
+        <p class="eyebrow">WELCOME TO ATEA PARFUMS</p>
+
+        <h1>Discover Your Signature Scent</h1>
+
+        <p class="hero-description">
+            Temukan aroma yang menggambarkan karakter dan ceritamu.
+            Setiap wewangian memiliki keunikan untuk menemani
+            setiap momen berharga.
+        </p>
+
+        <div class="about-hero-image">
+            <img
+                src="<?= h(url('assets/orlune-bottle.png')) ?>"
+                alt="Orlune by ATEA Parfums"
+            >
+        </div>
     </section>
 
-    <section class="values">
-      <div><span>01</span><h3>Personal</h3><p>Sepuluh karakter aroma, supaya setiap orang punya yang terasa seperti dirinya.</p></div>
-      <div><span>02</span><h3>Lasting</h3><p>Dirancang agar kesan yang ditinggalkan bertahan, bahkan setelah kamu pergi.</p></div>
-      <div><span>03</span><h3>Crafted</h3><p>Tersedia dalam ukuran 50 ml dan 100 ml, untuk dibawa bepergian atau dijadikan signature.</p></div>
+    <!-- OUR STORY: TEKS KIRI, GAMBAR KANAN -->
+    <section class="about-row">
+        <div class="about-row-text">
+            <p class="eyebrow">OUR STORY</p>
+            <h2>More Than a Fragrance</h2>
+
+            <p>
+                ATEA Parfums hadir dengan gagasan bahwa parfum bukan
+                sekadar wewangian, tetapi juga bagian dari identitas
+                dan cara seseorang mengekspresikan diri. Kami ingin
+                menghadirkan aroma yang berkesan dan menemani berbagai
+                momen kehidupan.
+            </p>
+        </div>
+
+        <div class="about-row-image">
+            <img
+                src="<?= h(url('assets/orlune-bottle.png')) ?>"
+                alt="Koleksi parfum ATEA"
+            >
+        </div>
     </section>
 
-    <section class="brand-story">
-      <div class="story-mark"><img src="<?= h(url('assets/atea-mark.png')) ?>" alt=""></div>
-      <div class="story-copy"><p class="eyebrow">FIND YOUR SIGNATURE</p><h2>Make it<br><em>unforgettable.</em></h2><a href="<?= h(url('lineup.php')) ?>" class="text-link">DISCOVER THE COLLECTION <span>↗</span></a></div>
+    <!-- OUR PHILOSOPHY: GAMBAR KIRI, TEKS KANAN -->
+    <section class="about-row reverse">
+        <div class="about-row-text">
+            <p class="eyebrow">OUR PHILOSOPHY</p>
+            <h2>A Scent That Defines You</h2>
+
+            <p>
+                Setiap orang memiliki karakter dan cerita yang berbeda.
+                Karena itu, kami percaya bahwa aroma yang tepat dapat
+                menjadi bagian dari ekspresi diri serta memberikan
+                rasa nyaman dan percaya diri.
+            </p>
+        </div>
+
+        <div class="about-row-image">
+            <img
+                src="<?= h(url('assets/orlune-bottle.png')) ?>"
+                alt="Orlune perfume"
+            >
+        </div>
     </section>
-  </main>
+
+    <!-- OUR COMMITMENT: TEKS KIRI, GAMBAR KANAN -->
+    <section class="about-row">
+        <div class="about-row-text">
+            <p class="eyebrow">OUR COMMITMENT</p>
+            <h2>Made for Every Moment</h2>
+
+            <p>
+                Dari aktivitas sehari-hari hingga momen spesial,
+                ATEA ingin menjadi bagian dari perjalananmu.
+                Kami terus berupaya mengembangkan koleksi aroma
+                yang menarik untuk berbagai kepribadian.
+            </p>
+
+            <a class="outline-link" href="<?= h(url('lineup.php')) ?>">
+                EXPLORE OUR COLLECTION
+            </a>
+        </div>
+
+        <div class="about-row-image">
+            <img
+                src="<?= h(url('assets/orlune-bottle.png')) ?>"
+                alt="ATEA Parfums collection"
+            >
+        </div>
+    </section>
+
+    <!-- ENDING -->
+    <section class="about-ending">
+        <img
+            src="<?= h(url('assets/atea-mark.png')) ?>"
+            alt="ATEA Parfums"
+        >
+
+        <h2>Find Your Signature Scent</h2>
+        <p>Your scent, your story, your identity.</p>
+
+        <a class="outline-link" href="<?= h(url('lineup.php')) ?>">
+            DISCOVER ATEA
+        </a>
+    </section>
+
+</main>
+
 <?php require __DIR__ . '/includes/footer.php'; ?>
+```
