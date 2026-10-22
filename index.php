@@ -5,12 +5,59 @@ $page = 'home';
 $title = 'ATEA Parfums — Discover Your Scent';
 $withCatalog = true;
 // ===== DATA ANGGOTA KELOMPOK =====
+
+
 $team = [
-    ['name' => 'Arya Ramadhan', 'school' => 'SMA Negeri 1 Contoh', 'photo' => 'assets/team/anggota1.png'],
-    ['name' => 'Evan Havillah Dwika Putra', 'school' => 'SMK Negeri 2 Contoh',  'photo' => 'assets/team/anggota2.jpeg'],
-    ['name' => 'Andika Syafulloh Yusuf', 'school' => 'SMA Negeri 3 Contoh',  'photo' => 'assets/team/anggota3.jpeg'],
-    ['name' => 'Tegar Maulida Dias', 'school' => 'SMA Swasta 4 Contoh',  'photo' => 'assets/team/anggota4.jpeg'],
+    [
+        'name' => 'Arya Ramadhan',
+        'school' => [
+            'SD Negeri Kaong',
+            'SMP 2 KD',
+            'Inka Boarding School',
+            'Universitas Cendekia Abditama'
+        ],
+        'quotes' => 'Jangan bilang tidak mungkin kepadaku sebelum kamu mati mencobanya.',
+        'photo' => 'assets/team/anggota1.jpeg'
+    ],
+
+
+    [
+        'name' => 'Evan Havillah Dwika Putra',
+        'school' => [
+          'SD Bina Nusa',
+          'MTS Al-Hafizh',
+          'SMK Negri 5 Kabupaten Tangerang',
+          'Universitas Cendekia Abditama'
+        ],
+        'quotes' => 'Percayalah pada kemampuanmu untuk mengatasi kesulitan.',
+        'photo' => 'assets/team/anggota2.jpeg'
+    ],
+    
+    [
+        'name' => 'Andika Syafulloh Yusuf',
+        'school' => [
+          'SDN Kutabumi',
+          'SMPN 2 Pasarkemis', 
+          'SMKN 2 Kab Tangerang',
+          'Universitas Cendekia Abditama'
+        ],
+        'quotes' => 'Saat kamu tahu seberapa berharganya dirimu, dunia tidak punya pilihan selain menghormatimu.',
+        'photo' => 'assets/team/anggota3.jpeg'
+    ],
+    [
+        'name' => 'Tegar Maulida Dias',
+        'school' => [
+          'SDN PB Kelapa Dua 1',
+          'MTS Al-Amin',
+          'MA Al-Amin',
+          'Universitas Cendekia Abditama'
+        ],
+        'quotes' => 'Jangan MUNDUR, Allah gak TIDUR.',
+        'photo' => 'assets/team/anggota4.jpeg'
+    ],
+    
 ];
+
 require __DIR__ . '/includes/header.php';
 ?>
 <main>
@@ -49,7 +96,20 @@ require __DIR__ . '/includes/header.php';
           <span class="product-type">ASAL SEKOLAH</span>
         </div>
       </div>
-      <p class="product-description"><?= h($m['school']) ?></p>
+      
+
+<ul class="team-schools">
+    <?php foreach ($m['school'] as $school): ?>
+        <li><?= h($school) ?></li>
+    <?php endforeach; ?>
+</ul>
+
+
+<div class="team-quotes">
+    <span class="product-type">QUOTES</span>
+    <p><?= h($m['quotes']) ?></p>
+</div>
+
     </article>
   <?php endforeach; ?>
 </div>

@@ -117,3 +117,120 @@ details summary{cursor:pointer;font-size:12px;color:var(--wine);margin-bottom:6p
 }
 .panel-form .pay-opt{flex-direction:row;align-items:center;gap:12px;font-size:14px;color:var(--ink)}
 .order-items li>span:first-child{flex:1}
+
+
+
+
+/* ===== PROFIL ANGGOTA KELOMPOK ===== */
+
+.team-grid .team-card {
+    min-width: 0;
+}
+
+.team-card .product-meta {
+    display: block;
+    padding: 17px 2px 0;
+}
+
+.team-card .product-name {
+    margin: 0 0 12px;
+    line-height: 1.3;
+    overflow-wrap: break-word;
+}
+
+
+
+/* Asal sekolah anggota */
+.team-grid .team-card > .product-description {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+    margin: 12px 0 0 !important;
+    padding: 0 !important;
+
+    white-space: normal !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    font-size: 11px;
+    line-height: 1.9;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+/* Bagian quotes */
+.team-card .team-quotes {
+    display: block;
+    width: 100%;
+    margin-top: 24px;
+    padding-top: 15px;
+    border-top: 1px solid var(--line);
+    box-sizing: border-box;
+}
+
+.team-card .team-quotes .product-type {
+    display: block;
+    margin: 0 0 10px;
+}
+
+.team-card .team-quotes p {
+    margin: 0;
+    padding: 0;
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.9;
+    color: #80756d;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+/* Tampilan HP */
+@media (max-width: 680px) {
+    .team-card .product-description {
+        font-size: 10px;
+        line-height: 1.8;
+    }
+
+    .team-card .team-quotes {
+        margin-top: 20px;
+        padding-top: 13px;
+    }
+
+    .team-card .team-quotes p {
+        font-size: 10px;
+        line-height: 1.8;
+    }
+}
+
+/* Daftar asal sekolah anggota */
+.team-card .team-schools {
+    list-style: none;
+    margin: 12px 0 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.team-card .team-schools li {
+    display: block;
+    margin: 0 0 6px;
+    padding: 0;
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #80756d;
+    overflow-wrap: anywhere;
+}
+
+.team-card .team-schools li::before {
+    content: "- ";
+}
+
+
+
+
