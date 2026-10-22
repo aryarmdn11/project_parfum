@@ -37,7 +37,22 @@ require __DIR__ . '/includes/header.php';
         <div><p class="eyebrow">PHOTO AND PROFILES</p><h2>Of the <em>Founders</em></h2></div>
         <a href="<?= h(url('lineup.php')) ?>" class="text-link">VIEW FULL LINEUP <span>↗</span></a>
       </div>
-      <div class="product-grid" id="featuredGrid"></div>
+      <div class="product-grid team-grid">
+  <?php foreach ($team as $m): ?>
+    <article class="product-card team-card">
+      <div class="product-image">
+        <img src="<?= h(url($m['photo'])) ?>" alt="Foto <?= h($m['name']) ?>" loading="lazy">
+      </div>
+      <div class="product-meta">
+        <div>
+          <h3 class="product-name"><?= h($m['name']) ?></h3>
+          <span class="product-type">ASAL SEKOLAH</span>
+        </div>
+      </div>
+      <p class="product-description"><?= h($m['school']) ?></p>
+    </article>
+  <?php endforeach; ?>
+</div>
     </section>
 
     <section class="brand-story">
