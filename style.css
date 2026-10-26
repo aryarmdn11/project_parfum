@@ -231,6 +231,44 @@ details summary{cursor:pointer;font-size:12px;color:var(--wine);margin-bottom:6p
     content: "- ";
 }
 
+/* HOVER LIFT FOTO ANGGOTA ATEA */
+.team-grid .team-card .product-image {
+    position: relative;
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.team-grid .team-card:hover .product-image {
+    transform: translateY(-10px);
+    box-shadow: 0 14px 28px rgba(40, 20, 15, 0.20);
+    border-color: var(--wine);
+}
+
+.team-grid .team-card .product-image img {
+    padding: 5px;
+}
+
+/* Samakan background frame foto anggota dengan halaman */
+.team-grid .team-card .product-image {
+    background: #f3f1ed;
+}
+
+/* Kecilkan gambar parfum, bentuk lengkungan tetap */
+.home-hero-visual .arch img {
+    transform: scale(0.82);
+    transform-origin: center center;
+}
+
+
+
+
+
+
+
+
+
 
 
 
