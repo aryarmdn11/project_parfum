@@ -261,6 +261,56 @@ details summary{cursor:pointer;font-size:12px;color:var(--wine);margin-bottom:6p
     transform-origin: center center;
 }
 
+/* Posisi ikon mata di dalam kolom password */
+.auth-card .password-wrapper {
+    position: relative;
+    width: 100%;
+    margin-top: 8px;
+}
+
+.auth-card .password-wrapper input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 45px;
+}
+
+.auth-card .toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+
+    width: 28px;
+    height: 28px;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    outline: none;
+    background: transparent;
+    box-shadow: none;
+    color: #80756d;
+    cursor: pointer;
+}
+
+.auth-card .toggle-password:hover,
+.auth-card .toggle-password:focus,
+.auth-card .toggle-password:active {
+    background: transparent;
+    box-shadow: none;
+    color: #c7d2ff;
+}
+
+.auth-card .toggle-password svg {
+    display: block;
+    pointer-events: none;
+}
+
+
 
 
 

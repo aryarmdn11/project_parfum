@@ -1,3 +1,24 @@
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const password = document.getElementById('password');
+    const toggle = document.getElementById('togglePassword');
+
+    if (!password || !toggle) return;
+
+    toggle.addEventListener('click', function () {
+        const tampilkan = password.type === 'password';
+
+        password.type = tampilkan ? 'text' : 'password';
+        toggle.setAttribute('aria-pressed', String(tampilkan));
+        toggle.setAttribute(
+            'aria-label',
+            tampilkan ? 'Sembunyikan password' : 'Tampilkan password'
+        );
+    });
+});
+</script>
+
 <?php
 require __DIR__ . '/includes/bootstrap.php';
 $next = $_GET['next'] ?? $_POST['next'] ?? '';
@@ -37,7 +58,40 @@ require __DIR__ . '/includes/header.php';
     <?= csrf_field() ?>
     <input type="hidden" name="next" value="<?= h($next) ?>">
     <label>Email<input type="email" name="email" required autocomplete="email" value="<?= h($_POST['email'] ?? '') ?>"></label>
-    <label>Password<input type="password" name="password" required autocomplete="current-password"></label>
+    
+
+<label for="password">Password</label>
+<div class="password-wrapper">
+    <input
+        type="password"
+        name="password"
+        id="password"
+        required
+        autocomplete="current-password"
+    >
+
+    <button
+        type="button"
+        class="toggle-password"
+        id="togglePassword"
+        aria-label="Tampilkan password"
+        aria-pressed="false"
+    >
+        <svg xmlns="http://www.w3.org/2000/svg"
+             width="19" height="19"
+             viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="1.7"
+             stroke-linecap="round"
+             stroke-linejoin="round">
+            <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/>
+            <circle cx="12" cy="12" r="3"/>
+        </svg>
+    </button>
+</div>
+
+
     <button class="solid-btn dark" type="submit">LOGIN</button>
     <p class="auth-alt">Belum punya akun? <a href="<?= h(url('register.php' . ($next ? '?next=' . rawurlencode($next) : ''))) ?>">Daftar</a></p>
   </form>
