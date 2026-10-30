@@ -1,4 +1,4 @@
-```php
+
 <?php
 require __DIR__ . '/includes/bootstrap.php';
 require __DIR__ . '/includes/catalog.php';
@@ -23,19 +23,17 @@ require __DIR__ . '/includes/header.php';
             setiap momen berharga.
         </p>
 
-        <div class="about-hero-image">
-            <img
-                src="<?= h(url('assets/orlune-bottle.png')) ?>"
-                alt="Orlune by ATEA Parfums"
-            >
-        </div>
+       <div class="about-hero-image">
+    <div class="about-hero-bg"></div>
+    <img src="<?= h(url('assets/all q.jpg')) ?>" alt="ATEA Parfums">
+</div>
     </section>
 
     <!-- OUR STORY: TEKS KIRI, GAMBAR KANAN -->
     <section class="about-row">
         <div class="about-row-text">
             <p class="eyebrow">OUR STORY</p>
-            <h2>More Than a Fragrance</h2>
+            <h2 style="color: #0F2C59 !important;">More Than a Fragrance</h2>
 
             <p>
                 ATEA Parfums hadir dengan gagasan bahwa parfum bukan
@@ -48,7 +46,7 @@ require __DIR__ . '/includes/header.php';
 
         <div class="about-row-image">
             <img
-                src="<?= h(url('assets/orlune-bottle.png')) ?>"
+               <img src="<?= h(url('assets/Atea Blue.png')) ?>" alt="ATEA Blue">    
                 alt="Koleksi parfum ATEA"
             >
         </div>
@@ -58,7 +56,7 @@ require __DIR__ . '/includes/header.php';
     <section class="about-row reverse">
         <div class="about-row-text">
             <p class="eyebrow">OUR PHILOSOPHY</p>
-            <h2>A Scent That Defines You</h2>
+            <h2 style="color: #710014 !important;">A Scent That Defines You</h2>
 
             <p>
                 Setiap orang memiliki karakter dan cerita yang berbeda.
@@ -70,7 +68,7 @@ require __DIR__ . '/includes/header.php';
 
         <div class="about-row-image">
             <img
-                src="<?= h(url('assets/orlune-bottle.png')) ?>"
+                <img src="<?= h(url('assets/Atea Red.png')) ?>" alt="ATEA Red">
                 alt="Orlune perfume"
             >
         </div>
@@ -80,8 +78,7 @@ require __DIR__ . '/includes/header.php';
     <section class="about-row">
         <div class="about-row-text">
             <p class="eyebrow">OUR COMMITMENT</p>
-            <h2>Made for Every Moment</h2>
-
+            <h2 style="color: #8A6BBE !important;">Made for Every Moment</h2>
             <p>
                 Dari aktivitas sehari-hari hingga momen spesial,
                 ATEA ingin menjadi bagian dari perjalananmu.
@@ -96,7 +93,7 @@ require __DIR__ . '/includes/header.php';
 
         <div class="about-row-image">
             <img
-                src="<?= h(url('assets/orlune-bottle.png')) ?>"
+                src="<?= h(url('assets/Purple.jpg')) ?>"
                 alt="ATEA Parfums collection"
             >
         </div>

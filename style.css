@@ -117,70 +117,38 @@ details summary{cursor:pointer;font-size:12px;color:var(--wine);margin-bottom:6p
 }
 .panel-form .pay-opt{flex-direction:row;align-items:center;gap:12px;font-size:14px;color:var(--ink)}
 .order-items li>span:first-child{flex:1}
-```css
+
 /* ==============================
    ABOUT PAGE
 ============================== */
+
+
 
 .page-about {
     background: var(--paper);
 }
 
-/* BANNER LAMA */
-.page-about .about-banner {
-    width: 100%;
-    height: 290px;
-    overflow: hidden;
-    background: #fbfbfb;
-}
-
-.page-about .about-banner img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-
-.page-about .about-split {
-    display: block;
-    min-height: auto;
-}
-
-.page-about .about-copy {
-    width: 100%;
-    max-width: none;
-    padding: 60px 10%;
-}
-
-/* BAGIAN JUDUL */
 .page-about .about-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    padding: 45px 7% 35px;
-}
-
-.page-about .about-hero h1 {
-    font: normal clamp(32px, 4vw, 52px)/1.2 var(--serif);
-    color: #4a3b32;
-    margin: 12px 0 16px;
-}
-
-.page-about .hero-description {
-    max-width: 600px;
-    margin: 0 auto 28px;
-    color: #6b5b50;
-    line-height: 1.8;
-}
-
-/* BANNER TENGAH - UKURAN ASLI */
-.page-about .about-hero-image {
-    display: block;
     width: 100%;
-    max-width: 700px;
-    height: 280px;
-    margin: 0 auto;
+    padding: 0 0 45px;
+}
+
+.page-about .about-hero-image {
+    order: 1;
+    width: 100%;
+    height: 450px;
+    margin: 0 auto 30px;
     overflow: hidden;
-    background: #f5e8e4;
+    background: transparent;
+    position: relative;
+}
+
+.page-about .about-hero-bg {
+    display: none;
 }
 
 .page-about .about-hero-image img {
@@ -189,11 +157,34 @@ details summary{cursor:pointer;font-size:12px;color:var(--wine);margin-bottom:6p
     height: 100%;
     object-fit: contain;
     object-position: center;
+    background: transparent;
 }
 
-/* ==============================
-   ZIGZAG BAWAH
-============================== */
+.page-about .about-hero .eyebrow {
+    order: 2;
+    display: block;
+    width: 100%;
+    margin: 0 0 15px;
+    text-align: center;
+}
+
+.page-about .about-hero h1 {
+    order: 3;
+    display: block;
+    width: 100%;
+    font: normal clamp(36px, 4vw, 58px)/1.2 var(--serif);
+    color: #4a3b32;
+    margin: 0;
+    text-align: center;
+}
+
+.page-about .about-hero p {
+    order: 4;
+    width: 100%;
+    color: #6b5b50;
+    line-height: 1.8;
+    text-align: center;
+}
 
 .page-about .about-row {
     display: grid !important;
@@ -203,92 +194,88 @@ details summary{cursor:pointer;font-size:12px;color:var(--wine);margin-bottom:6p
     width: 100%;
     max-width: 1120px;
     margin: 0 auto;
-    padding: 45px 6%;
+    padding: 55px 6%;
     box-sizing: border-box;
 }
 
-/* BARIS 1 DAN 3: TEKS KIRI, GAMBAR KANAN */
 .page-about .about-row:not(.reverse) .about-row-text {
-    order: 1;
     grid-column: 1;
     grid-row: 1;
 }
 
 .page-about .about-row:not(.reverse) .about-row-image {
-    order: 2;
     grid-column: 2;
     grid-row: 1;
 }
 
-/* BARIS 2: GAMBAR KIRI, TEKS KANAN */
 .page-about .about-row.reverse .about-row-image {
-    order: 1;
     grid-column: 1;
     grid-row: 1;
 }
 
 .page-about .about-row.reverse .about-row-text {
-    order: 2;
     grid-column: 2;
     grid-row: 1;
 }
 
-/* TEKS ZIGZAG */
 .page-about .about-row-text {
     min-width: 0;
 }
 
+.page-about .about-row-text .eyebrow {
+    margin-bottom: 15px;
+}
+
 .page-about .about-row-text h2 {
-    font: normal clamp(28px, 3vw, 40px)/1.2 var(--serif);
+    font: normal clamp(28px, 3vw, 42px)/1.2 var(--serif);
     color: #4a3b32;
     margin: 12px 0 20px;
 }
 
 .page-about .about-row-text p:not(.eyebrow) {
     color: #6b5b50;
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.9;
-    margin-bottom: 22px;
+    margin: 0 0 22px;
 }
 
-/* GAMBAR ZIGZAG */
 .page-about .about-row-image {
     display: block;
     width: 100%;
-    height: 330px;
+    height: 350px;
     overflow: hidden;
-    background: #f5e8e4;
+    background: transparent;
 }
 
 .page-about .about-row-image img {
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
+    transform: scale(1.12);
 }
 
-/* TOMBOL */
 .page-about .outline-link {
-    display: inline-block;
-    padding: 12px 22px;
-    border: 1px solid #8b7160;
-    color: #6b5141;
+    display: inline-flex;
+    align-items: center;
+    padding: 13px 22px;
+    border: 1px solid var(--wine);
+    color: var(--wine);
     text-decoration: none;
-    font-size: 12px;
-    letter-spacing: 1px;
-    transition: 0.2s ease;
+    font-size: 10px;
+    letter-spacing: 1.2px;
+    transition: .25s;
 }
 
 .page-about .outline-link:hover {
-    background: #6b5141;
+    background: var(--wine);
     color: #fff;
 }
 
-/* BAGIAN PENUTUP */
 .page-about .about-ending {
     text-align: center;
-    padding: 55px 7% 70px;
+    padding: 60px 7% 75px;
 }
 
 .page-about .about-ending img {
@@ -296,41 +283,82 @@ details summary{cursor:pointer;font-size:12px;color:var(--wine);margin-bottom:6p
     width: 85px;
     height: 85px;
     object-fit: contain;
-    margin: 0 auto 15px;
+    margin: 0 auto 18px;
 }
 
 .page-about .about-ending h2 {
-    font: normal clamp(27px, 3vw, 38px)/1.2 var(--serif);
+    font: normal clamp(28px, 3vw, 40px)/1.2 var(--serif);
     color: #4a3b32;
-    margin-bottom: 12px;
+    margin: 0 0 12px;
 }
 
 .page-about .about-ending p {
     color: #6b5b50;
-    margin-bottom: 25px;
+    margin: 0 0 25px;
 }
 
-/* TAMPILAN HP */
+@media (max-width: 1000px) {
+    .page-about .about-row {
+        gap: 30px;
+    }
+
+    .page-about .about-row-image {
+        height: 300px;
+    }
+}
+
 @media (max-width: 680px) {
-    .page-about .about-banner {
-        height: 260px;
-    }
-
-    .page-about .about-copy {
-        padding: 40px 7%;
-    }
-
     .page-about .about-hero {
-        padding: 35px 6%;
+        padding-bottom: 30px;
     }
 
-    /* Ukuran banner tengah tetap */
     .page-about .about-hero-image {
-        max-width: 700px;
+        height: 280px;
+        margin-bottom: 25px;
+        transform: translateY(100px);
+    }
+
+    .page-about .about-hero h1 {
+        font-size: 38px;
+        padding: 0 6%;
+    }
+
+    .page-about .about-row {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding: 35px 7%;
+    }
+
+    .page-about .about-row:not(.reverse) .about-row-text,
+    .page-about .about-row:not(.reverse) .about-row-image,
+    .page-about .about-row.reverse .about-row-text,
+    .page-about .about-row.reverse .about-row-image {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .page-about .about-row-image {
         height: 280px;
     }
 
-    /* Zigzag menjadi satu kolom di HP */
-    .page-about .about-row {
-        display: grid !important;
-        grid-template-columns:
+    .page-about .about-row-text h2 {
+        font-size: 32px;
+    }
+
+    .page-about .about-row-text p:not(.eyebrow) {
+        font-size: 13px;
+    }
+
+    .page-about .about-ending {
+        padding: 45px 7% 60px;
+    }
+.page-about .gold-purple-text {
+    background: linear-gradient(to bottom, #D4AF37 0%, #D4AF37 50%, #800080 50%, #800080 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+    
+}
+
