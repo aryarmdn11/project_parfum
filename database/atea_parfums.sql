@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 07, 2026 at 03:56 PM
+-- Generation Time: Nov 09, 2026 at 08:20 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -219,16 +219,17 @@ CREATE TABLE `produk` (
 --
 
 INSERT INTO `produk` (`id_produk`, `id_brand`, `id_kategori`, `nama_produk`, `deskripsi`, `gambar`, `konsentrasi`, `status_produk`, `created_at`) VALUES
-(1, 1, 4, 'Aureon', 'Perpaduan hangat yang lembut dengan sentuhan floral dan nuansa creamy. Orlune dirancang untuk memberi kesan elegan, tenang, dan mudah diingat, dari momen sehari-hari hingga malam spesial.', 'assets/aureon-bottle.svg', 'Extrait De Parfum', 'aktif', '2026-10-20 20:25:15'),
-(2, 1, 3, 'Zafran', 'Placeholder deskripsi: aroma cerah dengan karakter elegan untuk menemani aktivitas harian.', 'assets/zafran-bottle.svg', 'Eau De Parfum', 'aktif', '2026-10-20 20:25:15'),
-(3, 1, 4, 'Noctis', 'Placeholder deskripsi: aroma lembut dan modern dengan karakter yang terasa dekat di kulit.', 'assets/noctis-bottle.svg', 'Eau De Parfum', 'aktif', '2026-10-20 20:25:15'),
-(4, 1, 2, 'Velora', 'Placeholder deskripsi: aroma hangat dan memikat untuk suasana santai maupun acara istimewa.', 'assets/velora-bottle.svg', 'Eau De Parfum', 'aktif', '2026-10-20 20:25:15'),
-(5, 1, 2, 'Elvara', 'Placeholder deskripsi: aroma segar dengan sentuhan bersih yang terasa ringan dan berenergi.', 'assets/elvara-bottle.svg', 'Eau De Parfum', 'aktif', '2026-10-20 20:25:15'),
-(6, 1, 3, 'Nerion', 'Placeholder deskripsi: aroma malam dengan karakter dalam, sensual, dan berkesan.', 'assets/nerion-bottle.svg', 'Eau De Parfum', 'aktif', '2026-10-20 20:25:15'),
-(7, 1, 1, 'Sorell', 'Placeholder deskripsi: aroma romantis dengan nuansa bunga yang lembut dan manis.', 'assets/sorell-bottle.svg', 'Eau De Parfum', 'aktif', '2026-10-20 20:25:15'),
-(8, 1, 1, 'Orlune', 'Placeholder deskripsi: aroma bersih dan airy dengan sentuhan floral yang modern.', 'assets/orlune-bottle.svg', 'Eau De Parfum', 'aktif', '2026-10-20 20:25:15'),
-(9, 1, 1, 'Veyron', 'Placeholder deskripsi: aroma floral yang anggun dengan sentuhan buah yang segar.', 'assets/veyron-bottle.svg', 'Eau De Parfum', 'aktif', '2026-10-20 20:25:15'),
-(10, 1, 2, 'Lumera', 'Placeholder deskripsi: aroma elegan dengan karakter woody-amber yang meninggalkan kesan.', 'assets/lumera-bottle.svg', 'Eau De Parfum', 'aktif', '2026-10-20 20:25:15');
+(1, 1, 4, 'Aureon', 'Merah burgundy yang memancarkan keberanian dan kemewahan. Aureon merepresentasikan karakter elegan, hangat, dan penuh percaya diri untuk menemani setiap momen berharga.', 'assets/aureon-bottle.svg', 'Extrait De Parfum', 'aktif', '2026-10-20 20:25:15'),
+(2, 1, 3, 'Zafran', 'Terinspirasi dari warna amber yang hangat dan bercahaya. Zafran menggambarkan semangat, energi, dan keceriaan bagi mereka yang ingin tampil lebih ekspresif.', 'assets/zafran-bottle.svg', 'Eau De Parfum', 'aktif', '2026-10-20 20:25:15'),
+(3, 1, 4, 'Noctis', 'Hijau zamrud menghadirkan kesan tenang, misterius, dan berkelas. Noctis merepresentasikan ketenangan yang berpadu dengan karakter kuat dan penuh pesona.', 'assets/noctis-bottle.svg', 'Eau De Parfum', 'aktif', '2026-10-20 20:25:15'),
+(4, 1, 2, 'Velora', 'Biru royal mencerminkan ketegasan dan kepercayaan diri. Velora hadir dengan karakter modern dan elegan, cocok untuk melengkapi penampilan dalam berbagai kesempatan.', 'assets/velora-bottle.svg', 'Eau De Parfum', 'aktif', '2026-10-20 20:25:15'),
+(5, 1, 2, 'Elvara', 'Ungu menghadirkan kesan anggun dengan sentuhan misterius. Elvara merepresentasikan keindahan, kreativitas, dan karakter yang tidak mudah dilupakan.', 'assets/elvara-bottle.svg', 'Eau De Parfum', 'aktif', '2026-10-20 20:25:15'),
+(6, 1, 3, 'Nerion', 'Nuansa pink peach memberikan kesan lembut, hangat, dan bersahaja. Nerion menggambarkan keindahan sederhana yang tetap mampu memberikan kesan istimewa.', 'assets/nerion-bottle.svg', 'Eau De Parfum', 'aktif', '2026-10-20 20:25:15'),
+(7, 1, 1, 'Sorell', 'Perpaduan warna rose dan biru muda menciptakan kesan lembut sekaligus menenangkan. Sorell merepresentasikan keseimbangan, keanggunan, dan keindahan dalam kesederhanaan.', 'assets/sorell-bottle.svg', 'Eau De Parfum', 'aktif', '2026-10-20 20:25:15'),
+(8, 1, 1, 'Orlune', 'Sentuhan champagne dan lavender menghadirkan nuansa mewah yang tidak berlebihan. Orlune mencerminkan kelembutan, ketenangan, dan keanggunan yang timeless.', 'assets/orlune-bottle.svg', 'Eau De Parfum', 'aktif', '2026-10-20 20:25:15'),
+(9, 1, 1, 'Veyron', 'Perpaduan pink dan ungu memberikan karakter yang berani, ekspresif, dan penuh daya tarik. Veyron merepresentasikan kebebasan berekspresi dengan sentuhan elegan.', 'assets/veyron-bottle.svg', 'Eau De Parfum', 'aktif', '2026-10-20 20:25:15'),
+(10, 1, 2, 'Lumera', 'Perpaduan biru dan keemasan menciptakan kesan eksklusif dan bercahaya. Lumera menggambarkan kemewahan, optimisme, dan pesona yang hadir dalam setiap kesempatan.', 'assets/lumera-bottle.svg', 'Eau De Parfum', 'aktif', '2026-10-20 20:25:15'),
+(11, 1, 4, 'Noctis', 'Hijau zamrud menghadirkan kesan tenang, misterius, dan berkelas. Noctis merepresentasikan ketenangan yang berpadu dengan karakter kuat dan penuh pesona.', 'assets/noctis-bottle.svg', 'Eau De Parfum', 'aktif', '2026-10-20 20:25:15');
 
 -- --------------------------------------------------------
 
@@ -543,7 +544,7 @@ ALTER TABLE `payments`
 -- AUTO_INCREMENT for table `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id_produk` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_produk` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `produk_notes`
