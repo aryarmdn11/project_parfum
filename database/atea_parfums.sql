@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 09, 2026 at 08:20 AM
+-- Generation Time: Nov 10, 2026 at 09:31 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -228,8 +228,7 @@ INSERT INTO `produk` (`id_produk`, `id_brand`, `id_kategori`, `nama_produk`, `de
 (7, 1, 1, 'Sorell', 'Perpaduan warna rose dan biru muda menciptakan kesan lembut sekaligus menenangkan. Sorell merepresentasikan keseimbangan, keanggunan, dan keindahan dalam kesederhanaan.', 'assets/sorell-bottle.svg', 'Eau De Parfum', 'aktif', '2026-10-20 20:25:15'),
 (8, 1, 1, 'Orlune', 'Sentuhan champagne dan lavender menghadirkan nuansa mewah yang tidak berlebihan. Orlune mencerminkan kelembutan, ketenangan, dan keanggunan yang timeless.', 'assets/orlune-bottle.svg', 'Eau De Parfum', 'aktif', '2026-10-20 20:25:15'),
 (9, 1, 1, 'Veyron', 'Perpaduan pink dan ungu memberikan karakter yang berani, ekspresif, dan penuh daya tarik. Veyron merepresentasikan kebebasan berekspresi dengan sentuhan elegan.', 'assets/veyron-bottle.svg', 'Eau De Parfum', 'aktif', '2026-10-20 20:25:15'),
-(10, 1, 2, 'Lumera', 'Perpaduan biru dan keemasan menciptakan kesan eksklusif dan bercahaya. Lumera menggambarkan kemewahan, optimisme, dan pesona yang hadir dalam setiap kesempatan.', 'assets/lumera-bottle.svg', 'Eau De Parfum', 'aktif', '2026-10-20 20:25:15'),
-(11, 1, 4, 'Noctis', 'Hijau zamrud menghadirkan kesan tenang, misterius, dan berkelas. Noctis merepresentasikan ketenangan yang berpadu dengan karakter kuat dan penuh pesona.', 'assets/noctis-bottle.svg', 'Eau De Parfum', 'aktif', '2026-10-20 20:25:15');
+(10, 1, 2, 'Lumera', 'Perpaduan biru dan keemasan menciptakan kesan eksklusif dan bercahaya. Lumera menggambarkan kemewahan, optimisme, dan pesona yang hadir dalam setiap kesempatan.', 'assets/lumera-bottle.svg', 'Eau De Parfum', 'aktif', '2026-10-20 20:25:15');
 
 -- --------------------------------------------------------
 
@@ -325,6 +324,7 @@ CREATE TABLE `produk_variants` (
   `id_produk` int(10) UNSIGNED NOT NULL,
   `sku` varchar(50) NOT NULL,
   `ukuran_ml` int(10) UNSIGNED NOT NULL,
+  `harga_normal` decimal(12,2) NOT NULL DEFAULT 0.00,
   `harga` decimal(12,2) NOT NULL,
   `stok` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `status_variant` enum('aktif','nonaktif') NOT NULL DEFAULT 'aktif',
@@ -335,27 +335,27 @@ CREATE TABLE `produk_variants` (
 -- Dumping data for table `produk_variants`
 --
 
-INSERT INTO `produk_variants` (`id_variant`, `id_produk`, `sku`, `ukuran_ml`, `harga`, `stok`, `status_variant`, `created_at`) VALUES
-(1, 1, 'ATEA-ORL-50', 50, 319000.00, 50, 'aktif', '2026-10-20 20:25:15'),
-(2, 1, 'ATEA-ORL-100', 100, 489000.00, 50, 'aktif', '2026-10-20 20:25:15'),
-(3, 2, 'ATEA-AUR-50', 50, 279000.00, 50, 'aktif', '2026-10-20 20:25:15'),
-(4, 2, 'ATEA-AUR-100', 100, 429000.00, 50, 'aktif', '2026-10-20 20:25:15'),
-(5, 3, 'ATEA-VEL-50', 50, 289000.00, 50, 'aktif', '2026-10-20 20:25:15'),
-(6, 3, 'ATEA-VEL-100', 100, 449000.00, 50, 'aktif', '2026-10-20 20:25:15'),
-(7, 4, 'ATEA-SOL-50', 50, 299000.00, 50, 'aktif', '2026-10-20 20:25:15'),
-(8, 4, 'ATEA-SOL-100', 100, 459000.00, 50, 'aktif', '2026-10-20 20:25:15'),
-(9, 5, 'ATEA-ELA-50', 50, 289000.00, 50, 'aktif', '2026-10-20 20:25:15'),
-(10, 5, 'ATEA-ELA-100', 100, 439000.00, 50, 'aktif', '2026-10-20 20:25:15'),
-(11, 6, 'ATEA-NOC-50', 50, 299000.00, 50, 'aktif', '2026-10-20 20:25:15'),
-(12, 6, 'ATEA-NOC-100', 100, 469000.00, 50, 'aktif', '2026-10-20 20:25:15'),
-(13, 7, 'ATEA-AMO-50', 50, 279000.00, 50, 'aktif', '2026-10-20 20:25:15'),
-(14, 7, 'ATEA-AMO-100', 100, 429000.00, 50, 'aktif', '2026-10-20 20:25:15'),
-(15, 8, 'ATEA-CEL-50', 50, 299000.00, 50, 'aktif', '2026-10-20 20:25:15'),
-(16, 8, 'ATEA-CEL-100', 100, 459000.00, 50, 'aktif', '2026-10-20 20:25:15'),
-(17, 9, 'ATEA-ROS-50', 50, 289000.00, 50, 'aktif', '2026-10-20 20:25:15'),
-(18, 9, 'ATEA-ROS-100', 100, 439000.00, 50, 'aktif', '2026-10-20 20:25:15'),
-(19, 10, 'ATEA-VES-50', 50, 309000.00, 50, 'aktif', '2026-10-20 20:25:15'),
-(20, 10, 'ATEA-VES-100', 100, 479000.00, 50, 'aktif', '2026-10-20 20:25:15');
+INSERT INTO `produk_variants` (`id_variant`, `id_produk`, `sku`, `ukuran_ml`, `harga_normal`, `harga`, `stok`, `status_variant`, `created_at`) VALUES
+(1, 1, 'ATEA-AUR-50', 50, 249000.00, 199000.00, 50, 'aktif', '2026-10-20 20:25:15'),
+(2, 1, 'ATEA-AUR-100', 100, 299000.00, 249000.00, 50, 'aktif', '2026-10-20 20:25:15'),
+(3, 2, 'ATEA-ZAF-50', 50, 229000.00, 189000.00, 50, 'aktif', '2026-10-20 20:25:15'),
+(4, 2, 'ATEA-ZAF-100', 100, 279000.00, 229000.00, 50, 'aktif', '2026-10-20 20:25:15'),
+(5, 3, 'ATEA-NOC-50', 50, 259000.00, 209000.00, 50, 'aktif', '2026-10-20 20:25:15'),
+(6, 3, 'ATEA-NOC-100', 100, 299000.00, 249000.00, 50, 'aktif', '2026-10-20 20:25:15'),
+(7, 4, 'ATEA-VEL-50', 50, 239000.00, 199000.00, 50, 'aktif', '2026-10-20 20:25:15'),
+(8, 4, 'ATEA-VEL-100', 100, 289000.00, 239000.00, 50, 'aktif', '2026-10-20 20:25:15'),
+(9, 5, 'ATEA-ELA-50', 50, 249000.00, 209000.00, 50, 'aktif', '2026-10-20 20:25:15'),
+(10, 5, 'ATEA-ELA-100', 100, 299000.00, 249000.00, 50, 'aktif', '2026-10-20 20:25:15'),
+(11, 6, 'ATEA-NER-50', 50, 219000.00, 179000.00, 50, 'aktif', '2026-10-20 20:25:15'),
+(12, 6, 'ATEA-NER-100', 100, 269000.00, 219000.00, 50, 'aktif', '2026-10-20 20:25:15'),
+(13, 7, 'ATEA-SOR-50', 50, 229000.00, 189000.00, 50, 'aktif', '2026-10-20 20:25:15'),
+(14, 7, 'ATEA-SOR-100', 100, 279000.00, 229000.00, 50, 'aktif', '2026-10-20 20:25:15'),
+(15, 8, 'ATEA-ORL-50', 50, 269000.00, 219000.00, 50, 'aktif', '2026-10-20 20:25:15'),
+(16, 8, 'ATEA-ORL-100', 100, 299000.00, 259000.00, 50, 'aktif', '2026-10-20 20:25:15'),
+(17, 9, 'ATEA-VEY-50', 50, 239000.00, 199000.00, 50, 'aktif', '2026-10-20 20:25:15'),
+(18, 9, 'ATEA-VEY-100', 100, 289000.00, 239000.00, 50, 'aktif', '2026-10-20 20:25:15'),
+(19, 10, 'ATEA-LUM-50', 50, 259000.00, 209000.00, 50, 'aktif', '2026-10-20 20:25:15'),
+(20, 10, 'ATEA-LUM-100', 100, 299000.00, 249000.00, 50, 'aktif', '2026-10-20 20:25:15');
 
 -- --------------------------------------------------------
 
@@ -387,6 +387,13 @@ CREATE TABLE `user` (
   `role` enum('customer','admin') NOT NULL DEFAULT 'customer',
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id_user`, `nama`, `email`, `password`, `no_telepon`, `role`, `created_at`) VALUES
+(1, 'udin', 'udin123@gmail.com', '$2y$10$rsqhVNK/.MCrGJgjPnXKIe.BGoqYk6B9zVAnI9m//fWYFfTEyC1h6', '089897969593', 'customer', '2026-11-10 12:42:13');
 
 --
 -- Indexes for dumped tables
@@ -568,7 +575,7 @@ ALTER TABLE `reviews`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_user` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
