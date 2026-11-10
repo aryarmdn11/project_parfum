@@ -35,7 +35,7 @@ function db(): PDO {
         $pdo = new PDO('sqlite:' . $f, null, null, $opts);
         $pdo->exec('PRAGMA foreign_keys = ON');
     } else {
-        $pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8mb4', DB_USER, DB_PASS, $opts + [PDO::ATTR_EMULATE_PREPARES => false]);
+        $pdo = new PDO('mysql:host=' . DB_HOST . ';port=' . (defined('DB_PORT') ? DB_PORT : '3306') . ';dbname=' . DB_NAME . ';charset=utf8mb4', DB_USER, DB_PASS, $opts + [PDO::ATTR_EMULATE_PREPARES => false]);
     }
     return $pdo;
 }
@@ -84,6 +84,18 @@ function current_user(): ?array {
     return $u;
 }
 function login_user(int $id): void { session_regenerate_id(true); $_SESSION['uid'] = $id; }
+function login_redirect_for(array $user, ?string $next = ''): never {
+    // Admin selalu masuk ke dashboard admin; customer masuk ke halaman toko.
+    if (($user['role'] ?? '') === 'admin') {
+        redirect(url('admin/index.php'));
+    }
+    $target = trim((string)$next);
+    // Jangan izinkan akun customer diarahkan ke area admin.
+    if ($target !== '' && preg_match('#(^|/)admin(/|$)#i', $target)) {
+        $target = '';
+    }
+    redirect(safe_next($target));
+}
 function safe_next(?string $n): string {
     // hanya izinkan path relatif di situs ini
     if (!$n || !preg_match('#^[A-Za-z0-9_\-./?=&%]+$#', $n) || str_contains($n, '..') || str_starts_with($n, '/') || str_contains($n, '//')) return url('index.php');

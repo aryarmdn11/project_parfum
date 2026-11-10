@@ -1,7 +1,8 @@
 <?php
 require __DIR__ . '/includes/bootstrap.php';
 $next = $_GET['next'] ?? $_POST['next'] ?? '';
-if (current_user()) redirect(safe_next($next));
+$loggedInUser = current_user();
+if ($loggedInUser) login_redirect_for($loggedInUser, $next);
 
 $errors = [];
 $old = ['nama' => '', 'email' => '', 'no_telepon' => ''];

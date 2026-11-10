@@ -1,34 +1,27 @@
-# ATEA Parfums — Website + Backend PHP (XAMPP)
+# ATEA Parfums — PHP, MySQL, AdminLTE
 
-Frontend toko parfum yang sekarang tersambung ke database MySQL (`atea_parfums`) lewat PHP (PDO).
+## Menjalankan di XAMPP (Windows)
+1. Ekstrak folder `project_parfum-main` ke `C:\xampp\htdocs\`.
+2. Buka XAMPP Control Panel, lalu Start **Apache** dan **MySQL**.
+3. Buka `http://localhost/phpmyadmin`.
+4. Buat database bernama **atea_parfums** (collation `utf8mb4_unicode_ci`), lalu pilih database tersebut.
+5. Import file `database/atea_parfums.sql`.
+6. Buka `http://localhost/project_parfum-main/`.
+7. Buat akun administrator satu kali di `http://localhost/project_parfum-main/setup_admin.php`.
+8. Login melalui `http://localhost/project_parfum-main/login.php`.
+9. Setelah admin berhasil dibuat, hapus `setup_admin.php` dari folder project.
 
-## Cara menjalankan (XAMPP, Windows)
-1. Buka **XAMPP Control Panel**, klik **Start** pada **Apache** dan **MySQL**.
-2. Buka `http://localhost/phpmyadmin` → tab **Import** → pilih `database/atea_parfums.sql` → **Go**.
-3. Salin seluruh folder `atea_parfums_store` ke `C:\xampp\htdocs\`.
-4. Buka `http://localhost/atea_parfums_store/` di browser.
-5. Buat akun admin: buka `http://localhost/atea_parfums_store/setup_admin.php`, isi nama/email/password.
-   **Setelah itu hapus file `setup_admin.php`.** (Halaman ini otomatis menolak kalau admin sudah ada.)
-6. Login admin lalu buka **Panel Admin** (menu ikon akun) untuk kelola pesanan, harga, dan stok.
+## Konfigurasi database
+Default XAMPP:
+- Host: `127.0.0.1`
+- Port: `3306`
+- Database: `atea_parfums`
+- Username: `root`
+- Password: kosong
 
-Kebutuhan: PHP 8.1 atau lebih baru (XAMPP versi terbaru sudah memenuhi).
+Jika konfigurasi MySQL berbeda, salin `config.example.php` menjadi `config.local.php`, lalu sesuaikan `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, dan `DB_PASS`. `config.local.php` tidak diunggah ke Git.
 
-## Pengaturan (database, rekening, WhatsApp)
-Salin `config.example.php` menjadi `config.local.php`, lalu isi data aslimu di sana (`DB_USER`, `DB_PASS`, info pembayaran, `WHATSAPP_NUMBER`).
-`config.local.php` sudah ada di `.gitignore`, jadi tidak ikut ke GitHub. Kalau file itu belum ada, website memakai default XAMPP (user `root`, password kosong).
-
-## Struktur
-- `index.php`, `lineup.php`, `about.php`: halaman publik (produk, harga, stok, notes diambil dari database)
-- `login.php`, `register.php`, `logout.php`: akun pelanggan (password di-hash dengan `password_hash`)
-- `checkout.php`, `order_success.php`, `orders.php`: checkout, instruksi bayar, riwayat & pembatalan pesanan
-- `api/cart.php`: keranjang (tabel `carts`, `cart_items`); `api/review.php`: review (tabel `reviews`)
-- `admin/index.php`: kelola pesanan & konfirmasi pembayaran; `admin/products.php`: edit deskripsi, harga, stok, status
-- `includes/`: koneksi database, helper, katalog, fungsi keranjang & pesanan
-- `config.example.php`: contoh pengaturan (ikut GitHub); `config.local.php`: pengaturan asli (tidak ikut GitHub); `config.php`: pemuat
-- `database/atea_parfums.sql`: skema + data awal
-
-## Alur pesanan
-Keranjang disimpan di database per akun, jadi pelanggan harus login untuk menambah ke keranjang.
-Checkout membuat baris di `orders`, `order_items` (harga_satuan = snapshot harga saat itu), dan `payments` (status `pending`),
-mengurangi stok varian, lalu mengosongkan keranjang, semuanya dalam satu transaksi.
-Admin mengonfirmasi pembayaran → status pesanan jadi `diproses`. Pesanan yang dibatalkan mengembalikan stok.
+## Catatan
+- Pastikan ekstensi PHP `pdo_mysql` aktif di XAMPP.
+- AdminLTE 3.2 dan Font Awesome dimuat dari CDN, sehingga styling membutuhkan koneksi internet.
+- Jangan import SQL berulang kali ke database yang sudah berisi data kecuali memang ingin membangun ulang database.

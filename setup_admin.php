@@ -1,46 +1,58 @@
 <?php
-// Halaman sekali pakai untuk membuat akun admin pertama.
-// Otomatis nonaktif begitu sudah ada admin. SETELAH DIPAKAI, HAPUS FILE INI dari folder website.
 require __DIR__ . '/includes/bootstrap.php';
-$has = (int)db()->query("SELECT COUNT(*) FROM `user` WHERE role = 'admin'")->fetchColumn();
-if ($has > 0) { http_response_code(403); exit('Admin sudah ada. Hapus file setup_admin.php dari folder website.'); }
 
-$errors = []; $done = false; $old = ['nama' => '', 'email' => ''];
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+try {
+    $count = (int) db()->query("SELECT COUNT(*) FROM `user` WHERE role = 'admin'")->fetchColumn();
+} catch (Throwable $e) {
+    http_response_code(500);
+    exit('Database belum siap. Pastikan MySQL aktif dan database atea_parfums sudah di-import melalui phpMyAdmin. Detail: ' . h($e->getMessage()));
+}
+
+$error = '';
+$done = false;
+if ($count > 0) {
+    $done = true;
+} elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
     csrf_require();
-    $old = ['nama' => trim($_POST['nama'] ?? ''), 'email' => strtolower(trim($_POST['email'] ?? ''))];
-    $pass = (string)($_POST['password'] ?? '');
-    if (mb_strlen($old['nama']) < 2) $errors[] = 'Nama wajib diisi.';
-    if (!filter_var($old['email'], FILTER_VALIDATE_EMAIL)) $errors[] = 'Email tidak valid.';
-    if (strlen($pass) < 8) $errors[] = 'Password minimal 8 karakter.';
-    if (!$errors) {
-        $ex = db()->prepare('SELECT id_user FROM `user` WHERE email = ?');
-        $ex->execute([$old['email']]);
-        if ($id = $ex->fetchColumn()) {   // email sudah terdaftar sebagai customer -> naikkan jadi admin
-            db()->prepare("UPDATE `user` SET role = 'admin', password = ? WHERE id_user = ?")->execute([password_hash($pass, PASSWORD_DEFAULT), $id]);
-        } else {
-            db()->prepare("INSERT INTO `user` (nama, email, password, role, created_at) VALUES (?, ?, ?, 'admin', ?)")
-                ->execute([$old['nama'], $old['email'], password_hash($pass, PASSWORD_DEFAULT), now()]);
+    $nama = trim($_POST['nama'] ?? '');
+    $email = strtolower(trim($_POST['email'] ?? ''));
+    $password = (string)($_POST['password'] ?? '');
+    if ($nama === '' || !filter_var($email, FILTER_VALIDATE_EMAIL) || strlen($password) < 8) {
+        $error = 'Isi nama dan email yang valid. Password minimal 8 karakter.';
+    } else {
+        $st = db()->prepare("INSERT INTO `user` (nama, email, password, role) VALUES (?, ?, ?, 'admin')");
+        try {
+            $st->execute([$nama, $email, password_hash($password, PASSWORD_DEFAULT)]);
+            $done = true;
+        } catch (PDOException $e) {
+            $error = $e->getCode() === '23000' ? 'Email tersebut sudah terdaftar.' : 'Gagal membuat admin: ' . $e->getMessage();
         }
-        $done = true;
     }
 }
-$page = 'akun'; $title = 'Setup Admin — ATEA Parfums';
-require __DIR__ . '/includes/header.php';
 ?>
-<main class="auth-wrap">
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Setup Admin - ATEA Parfums</title>
+<style>
+body{font:16px Arial,sans-serif;background:#f4f6f9;display:grid;place-items:center;min-height:100vh;margin:0}
+main{background:#fff;padding:30px;border-radius:12px;width:min(420px,calc(100% - 40px));box-shadow:0 4px 20px #0001}
+h2{margin-top:0}label{display:block;margin:14px 0 6px}input{box-sizing:border-box;width:100%;padding:11px;border:1px solid #ccc;border-radius:6px}
+button,a.btn{display:inline-block;margin-top:18px;padding:11px 16px;background:#222;color:white;border:0;border-radius:6px;text-decoration:none;cursor:pointer}
+.error{background:#ffe5e5;color:#a00;padding:10px;border-radius:6px}
+small{color:#666}
+</style></head><body><main>
+<h2>ATEA PARFUMS</h2><p>Pengaturan akun administrator</p>
 <?php if ($done): ?>
-  <div class="auth-card"><h1>Admin dibuat</h1><p>Sekarang <b>hapus file <code>setup_admin.php</code></b> dari folder website, lalu <a href="<?= h(url('login.php?next=admin/index.php')) ?>">login</a>.</p></div>
+<p><?= $count > 0 ? 'Akun admin sudah tersedia. Setup admin dikunci demi keamanan.' : 'Akun administrator berhasil dibuat.' ?></p>
+<a class="btn" href="<?= h(url('admin/login.php')) ?>">Ke Login Admin</a>
+<p><small>Hapus file setup_admin.php dari folder project setelah selesai.</small></p>
 <?php else: ?>
-  <form class="auth-card" method="post" novalidate>
-    <p class="eyebrow">SETUP</p><h1>Buat admin</h1>
-    <?php foreach ($errors as $e): ?><div class="form-error"><?= h($e) ?></div><?php endforeach; ?>
-    <?= csrf_field() ?>
-    <label>Nama<input type="text" name="nama" required value="<?= h($old['nama']) ?>"></label>
-    <label>Email<input type="email" name="email" required value="<?= h($old['email']) ?>"></label>
-    <label>Password <small>(min. 8 karakter)</small><input type="password" name="password" required minlength="8"></label>
-    <button class="solid-btn dark" type="submit">BUAT ADMIN</button>
-  </form>
+<?php if ($error): ?><p class="error"><?= h($error) ?></p><?php endif; ?>
+<form method="post"><?= csrf_field() ?>
+<label>Nama administrator</label><input name="nama" required maxlength="100">
+<label>Email</label><input type="email" name="email" required maxlength="150">
+<label>Password (minimal 8 karakter)</label><input type="password" name="password" required minlength="8">
+<button type="submit">Buat Akun Admin</button>
+</form>
 <?php endif; ?>
-</main>
-<?php require __DIR__ . '/includes/footer.php'; ?>
+</main></body></html>
