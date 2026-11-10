@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 10, 2026 at 09:31 AM
+-- Generation Time: Nov 10, 2026 at 10:24 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -219,16 +219,16 @@ CREATE TABLE `produk` (
 --
 
 INSERT INTO `produk` (`id_produk`, `id_brand`, `id_kategori`, `nama_produk`, `deskripsi`, `gambar`, `konsentrasi`, `status_produk`, `created_at`) VALUES
-(1, 1, 4, 'Aureon', 'Merah burgundy yang memancarkan keberanian dan kemewahan. Aureon merepresentasikan karakter elegan, hangat, dan penuh percaya diri untuk menemani setiap momen berharga.', 'assets/aureon-bottle.svg', 'Extrait De Parfum', 'aktif', '2026-10-20 20:25:15'),
-(2, 1, 3, 'Zafran', 'Terinspirasi dari warna amber yang hangat dan bercahaya. Zafran menggambarkan semangat, energi, dan keceriaan bagi mereka yang ingin tampil lebih ekspresif.', 'assets/zafran-bottle.svg', 'Eau De Parfum', 'aktif', '2026-10-20 20:25:15'),
-(3, 1, 4, 'Noctis', 'Hijau zamrud menghadirkan kesan tenang, misterius, dan berkelas. Noctis merepresentasikan ketenangan yang berpadu dengan karakter kuat dan penuh pesona.', 'assets/noctis-bottle.svg', 'Eau De Parfum', 'aktif', '2026-10-20 20:25:15'),
-(4, 1, 2, 'Velora', 'Biru royal mencerminkan ketegasan dan kepercayaan diri. Velora hadir dengan karakter modern dan elegan, cocok untuk melengkapi penampilan dalam berbagai kesempatan.', 'assets/velora-bottle.svg', 'Eau De Parfum', 'aktif', '2026-10-20 20:25:15'),
-(5, 1, 2, 'Elvara', 'Ungu menghadirkan kesan anggun dengan sentuhan misterius. Elvara merepresentasikan keindahan, kreativitas, dan karakter yang tidak mudah dilupakan.', 'assets/elvara-bottle.svg', 'Eau De Parfum', 'aktif', '2026-10-20 20:25:15'),
-(6, 1, 3, 'Nerion', 'Nuansa pink peach memberikan kesan lembut, hangat, dan bersahaja. Nerion menggambarkan keindahan sederhana yang tetap mampu memberikan kesan istimewa.', 'assets/nerion-bottle.svg', 'Eau De Parfum', 'aktif', '2026-10-20 20:25:15'),
-(7, 1, 1, 'Sorell', 'Perpaduan warna rose dan biru muda menciptakan kesan lembut sekaligus menenangkan. Sorell merepresentasikan keseimbangan, keanggunan, dan keindahan dalam kesederhanaan.', 'assets/sorell-bottle.svg', 'Eau De Parfum', 'aktif', '2026-10-20 20:25:15'),
-(8, 1, 1, 'Orlune', 'Sentuhan champagne dan lavender menghadirkan nuansa mewah yang tidak berlebihan. Orlune mencerminkan kelembutan, ketenangan, dan keanggunan yang timeless.', 'assets/orlune-bottle.svg', 'Eau De Parfum', 'aktif', '2026-10-20 20:25:15'),
-(9, 1, 1, 'Veyron', 'Perpaduan pink dan ungu memberikan karakter yang berani, ekspresif, dan penuh daya tarik. Veyron merepresentasikan kebebasan berekspresi dengan sentuhan elegan.', 'assets/veyron-bottle.svg', 'Eau De Parfum', 'aktif', '2026-10-20 20:25:15'),
-(10, 1, 2, 'Lumera', 'Perpaduan biru dan keemasan menciptakan kesan eksklusif dan bercahaya. Lumera menggambarkan kemewahan, optimisme, dan pesona yang hadir dalam setiap kesempatan.', 'assets/lumera-bottle.svg', 'Eau De Parfum', 'aktif', '2026-10-20 20:25:15');
+(1, 1, 4, 'Aureon', 'Merah burgundy yang memancarkan keberanian dan kemewahan. Aureon merepresentasikan karakter elegan, hangat, dan penuh percaya diri untuk menemani setiap momen berharga.', 'assets/aureon-bottle.svg', 'Extrait de Parfum', 'aktif', '2026-10-20 20:25:15'),
+(2, 1, 3, 'Zafran', 'Terinspirasi dari warna amber yang hangat dan bercahaya. Zafran menggambarkan semangat, energi, dan keceriaan bagi mereka yang ingin tampil lebih ekspresif.', 'assets/zafran-bottle.svg', 'Extrait de Parfum', 'aktif', '2026-10-20 20:25:15'),
+(3, 1, 4, 'Noctis', 'Hijau zamrud menghadirkan kesan tenang, misterius, dan berkelas. Noctis merepresentasikan ketenangan yang berpadu dengan karakter kuat dan penuh pesona.', 'assets/noctis-bottle.svg', 'Extrait de Parfum', 'aktif', '2026-10-20 20:25:15'),
+(4, 1, 2, 'Velora', 'Biru royal mencerminkan ketegasan dan kepercayaan diri. Velora hadir dengan karakter modern dan elegan, cocok untuk melengkapi penampilan dalam berbagai kesempatan.', 'assets/velora-bottle.svg', 'Extrait de Parfum', 'aktif', '2026-10-20 20:25:15'),
+(5, 1, 2, 'Elvara', 'Ungu menghadirkan kesan anggun dengan sentuhan misterius. Elvara merepresentasikan keindahan, kreativitas, dan karakter yang tidak mudah dilupakan.', 'assets/elvara-bottle.svg', 'Extrait de Parfum', 'aktif', '2026-10-20 20:25:15'),
+(6, 1, 3, 'Nerion', 'Nuansa pink peach memberikan kesan lembut, hangat, dan bersahaja. Nerion menggambarkan keindahan sederhana yang tetap mampu memberikan kesan istimewa.', 'assets/nerion-bottle.svg', 'Extrait de Parfum', 'aktif', '2026-10-20 20:25:15'),
+(7, 1, 1, 'Sorell', 'Perpaduan warna rose dan biru muda menciptakan kesan lembut sekaligus menenangkan. Sorell merepresentasikan keseimbangan, keanggunan, dan keindahan dalam kesederhanaan.', 'assets/sorell-bottle.svg', 'Extrait de Parfum', 'aktif', '2026-10-20 20:25:15'),
+(8, 1, 1, 'Orlune', 'Sentuhan champagne dan lavender menghadirkan nuansa mewah yang tidak berlebihan. Orlune mencerminkan kelembutan, ketenangan, dan keanggunan yang timeless.', 'assets/orlune-bottle.svg', 'Extrait de Parfum', 'aktif', '2026-10-20 20:25:15'),
+(9, 1, 1, 'Veyron', 'Perpaduan pink dan ungu memberikan karakter yang berani, ekspresif, dan penuh daya tarik. Veyron merepresentasikan kebebasan berekspresi dengan sentuhan elegan.', 'assets/veyron-bottle.svg', 'Extrait de Parfum', 'aktif', '2026-10-20 20:25:15'),
+(10, 1, 2, 'Lumera', 'Perpaduan biru dan keemasan menciptakan kesan eksklusif dan bercahaya. Lumera menggambarkan kemewahan, optimisme, dan pesona yang hadir dalam setiap kesempatan.', 'assets/lumera-bottle.svg', 'Extrait de Parfum', 'aktif', '2026-10-20 20:25:15');
 
 -- --------------------------------------------------------
 
@@ -387,13 +387,6 @@ CREATE TABLE `user` (
   `role` enum('customer','admin') NOT NULL DEFAULT 'customer',
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`id_user`, `nama`, `email`, `password`, `no_telepon`, `role`, `created_at`) VALUES
-(1, 'udin', 'udin123@gmail.com', '$2y$10$rsqhVNK/.MCrGJgjPnXKIe.BGoqYk6B9zVAnI9m//fWYFfTEyC1h6', '089897969593', 'customer', '2026-11-10 12:42:13');
 
 --
 -- Indexes for dumped tables
