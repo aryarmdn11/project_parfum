@@ -1,3 +1,9 @@
+KELOMPOK 9
+1. Arya Ramadhan (2522105023), Github: aryarmdn11, Branch: arya
+2. Andika Syaifullah Yusuf (2522105049), Github: andika-syfllh, Branch: andika
+3. Tegar Maulida Dias (2522105014), Github: tegarmaulidadias-droid, Branch: tegar 
+4. Evan Havillah Dwika Putra (2522105049), Github: evanhavillahdwikaputra-bot, Branch: evan
+
 # ATEA Parfums — Website + Backend PHP (XAMPP)
 
 Frontend toko parfum yang sekarang tersambung ke database MySQL (`atea_parfums`) lewat PHP (PDO).
